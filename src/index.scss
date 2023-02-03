@@ -1,0 +1,65 @@
+$shadow-color: rgb(0, 0, 0);
+$primary: rgb(34, 209, 232);
+$danger: #d93957;
+
+.brand-font {
+    font-family: "Normal";
+    font-family: 'Press Start 2P';
+    font-size: 14px;
+}
+
+html,
+body,
+div#root {
+    height: 100%;
+    font-size: 16px;
+    background-color: purple;
+}
+
+.container {
+    overflow: hidden;
+    height: 100%;
+}
+
+.profile {
+    background-color: white;
+    box-shadow: 0 2.8px 2.2px rgba($shadow-color, 0.034),
+        0 6.7px 5.3px rgba($shadow-color, 0.048),
+        0 12.5px 10px rgba($shadow-color, 0.06),
+        0 22.3px 17.9px rgba($shadow-color, 0.072),
+        0 41.8px 33.4px rgba($shadow-color, 0.086),
+        0 100px 80px rgba($shadow-color, 0.12);
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+span.emoji {
+    font-size: 20px;
+}
+
+.user {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 3rem;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
