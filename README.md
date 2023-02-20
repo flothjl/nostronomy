@@ -17,3 +17,5 @@ Notes:
     * dynamic relay management is being worked on
 
 ![Nostronomy](demo.png "Nostronomy")
+
+![Manage](manage.png "Nostronomy")
