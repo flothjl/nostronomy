@@ -23,7 +23,7 @@ export default ({ children }) => {
                   className={'brand-font'}
                   style={{ fontSize: '0.75rem', color: 'white' }}
                 >
-                  nostree
+                  nostronomy
                 </span>{' '}
                 🤙
               </span>
