@@ -1,6 +1,7 @@
 import { useNostr, useProfile, dateToUnix } from 'nostr-react';
 import { nip19 } from 'nostr-tools';
 import { useEffect, useRef, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
 import ProfilePic from './ProfilePic';
@@ -17,11 +18,14 @@ export default ({ isManage, isEditable, pubKey: _pubKey = null }) => {
   if (!pubKey) {
     const queryParameters = new URLSearchParams(window.location.search);
     const npub = queryParameters.get('npub');
-    pubKey = nip19.decode(npub).data;
+    try{
+      pubKey = nip19.decode(npub).data;
+    } catch {
+      console.error('unable to decode pubKey')
+    }
   }
-
-  if (!pubKey) {
-    return <></>;
+  if(!pubKey){
+    return <Navigate to="/manage"/>
   }
   const nostr = useNostr();
   const [profileEdit, setProfileEdit] = useRecoilState(profileEditState);
@@ -36,7 +40,7 @@ export default ({ isManage, isEditable, pubKey: _pubKey = null }) => {
   }, []);
 
   useEffect(() => {
-    if (isProfileLoading) {
+    if (isProfileLoading && profileUpdateCount.current < 10) {
       setIsLoading(true);
     }
     if (profileUpdateCount.current < 10) {
@@ -44,7 +48,7 @@ export default ({ isManage, isEditable, pubKey: _pubKey = null }) => {
       profileUpdateCount.current++;
     }
     if (!isProfileLoading) {
-      // After we are told profile is loading, stop updating state
+      // After we are told profile is done loading, stop updating state
       profileUpdateCount.current = 10;
       setIsLoading(false);
     }
@@ -77,9 +81,7 @@ export default ({ isManage, isEditable, pubKey: _pubKey = null }) => {
 
   if (isLoading) {
     return (
-      <>
-        <Loader />
-      </>
+      <Loader />
     );
   }
   return (
