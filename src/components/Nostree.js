@@ -2,10 +2,10 @@ export default ({ children }) => {
   return (
     <>
       <div className='container'>
-        <div className={'row h-100 align-items-center'}>
-          <div className={'col-12'}>
+        <div className={'row h-100 align-items-center mx-1'}>
+          <div className={'profile col-12'}>
             <div className={'row'}>
-              <div className='profile col-md-11 col-lg-11 col-11 my-auto mx-auto'>
+              <div className='col-md-11 col-lg-11 col-11 my-auto mx-auto'>
                 {children}
               </div>
             </div>
