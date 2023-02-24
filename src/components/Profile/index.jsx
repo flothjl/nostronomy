@@ -4,16 +4,17 @@ import { useEffect, useRef, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import ProfilePic from './ProfilePic';
-import Name from './Name';
+import { profileEditState, profileDataState } from '../../recoilState';
+
 import About from './About';
-import Website from './Website';
 import Links from './Links';
 import Lnurl from './Lnurl';
-import { profileEditState, profileDataState } from '../../recoilState';
 import Loader from '../Loader';
+import Name from './Name';
+import ProfilePic from './ProfilePic';
+import Website from './Website';
 
-export default ({ isManage, isEditable, pubKey: _pubKey = null }) => {
+const Profile = ({ isManage, isEditable, pubKey: _pubKey = null }) => {
   let pubKey = _pubKey;
   if (!pubKey) {
     const queryParameters = new URLSearchParams(window.location.search);
@@ -24,9 +25,9 @@ export default ({ isManage, isEditable, pubKey: _pubKey = null }) => {
       console.error('unable to decode pubKey')
     }
   }
-  if(!pubKey){
-    return <Navigate to="/manage"/>
-  }
+  // if(!pubKey){
+  //   return <Navigate to="/manage"/>
+  // }
   const nostr = useNostr();
   const [profileEdit, setProfileEdit] = useRecoilState(profileEditState);
   const [profileData, setProfileData] = useRecoilState(profileDataState);
@@ -35,9 +36,10 @@ export default ({ isManage, isEditable, pubKey: _pubKey = null }) => {
   const { data: userData, isLoading: isProfileLoading } = useProfile({
     pubkey: pubKey,
   });
+
   useEffect(() => {
     setProfileEdit(isEditable);
-  }, []);
+  }, [setProfileEdit, isEditable]);
 
   useEffect(() => {
     if (isProfileLoading && profileUpdateCount.current < 10) {
@@ -52,7 +54,7 @@ export default ({ isManage, isEditable, pubKey: _pubKey = null }) => {
       profileUpdateCount.current = 10;
       setIsLoading(false);
     }
-  }, [isProfileLoading]);
+  }, [isProfileLoading, setProfileData, userData]);
 
   const handleSave = async () => {
     setIsLoading(true);
@@ -131,3 +133,5 @@ export default ({ isManage, isEditable, pubKey: _pubKey = null }) => {
     </>
   );
 };
+
+export default Profile
