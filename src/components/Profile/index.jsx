@@ -1,7 +1,7 @@
 import { useNostr, useProfile, dateToUnix } from 'nostr-react';
 import { nip19 } from 'nostr-tools';
 import { useEffect, useRef, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
 import { profileEditState, profileDataState } from '../../recoilState';
@@ -19,10 +19,10 @@ const Profile = ({ isManage, isEditable, pubKey: _pubKey = null }) => {
   if (!pubKey) {
     const queryParameters = new URLSearchParams(window.location.search);
     const npub = queryParameters.get('npub');
-    try{
+    try {
       pubKey = nip19.decode(npub).data;
     } catch {
-      console.error('unable to decode pubKey')
+      console.error('unable to decode pubKey');
     }
   }
   // if(!pubKey){
@@ -82,9 +82,7 @@ const Profile = ({ isManage, isEditable, pubKey: _pubKey = null }) => {
   };
 
   if (isLoading) {
-    return (
-      <Loader />
-    );
+    return <Loader />;
   }
   return (
     <>
@@ -134,4 +132,4 @@ const Profile = ({ isManage, isEditable, pubKey: _pubKey = null }) => {
   );
 };
 
-export default Profile
+export default Profile;

@@ -1,8 +1,8 @@
 import ItemBase from './ItemBase';
 import Emoji from './Profile/Emoji';
-export default () => {
+const Error = () => {
   return (
-    <ItemBase className="general-error">
+    <ItemBase className='general-error'>
       <div className='row'>
         <Emoji emoji={'😟'} />
       </div>
@@ -12,3 +12,5 @@ export default () => {
     </ItemBase>
   );
 };
+
+export default Error;

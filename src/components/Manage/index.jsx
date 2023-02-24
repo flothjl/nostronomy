@@ -5,7 +5,7 @@ import ItemBase from '../ItemBase';
 
 import './index.scss';
 
-export default () => {
+const Manage = () => {
   const [pubKey, setPubKey] = useState();
   const [unsupported, setUnsupported] = useState(false);
   const [nip07Loading, setNip07Loading] = useState(false);
@@ -53,3 +53,5 @@ export default () => {
     </>
   );
 };
+
+export default Manage;

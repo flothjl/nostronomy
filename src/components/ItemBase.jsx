@@ -1,7 +1,11 @@
-export default ({ children, ...props }) => {
+const ItemBase = ({ children, ...props }) => {
   return (
-    <div className={`row text-center`} >
-      <div className={`col-12 item-base  ${props.className || ''}`} {...props}>{children}</div>
+    <div className={`row text-center`}>
+      <div className={`col-12 item-base  ${props.className || ''}`} {...props}>
+        {children}
+      </div>
     </div>
   );
 };
+
+export default ItemBase;
