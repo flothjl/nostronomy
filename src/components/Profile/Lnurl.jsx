@@ -4,7 +4,7 @@ import QRCode from 'react-qr-code';
 import { EditableItem } from './EditableItem';
 import ItemBase from '../ItemBase';
 import Emoji from './Emoji';
-import './Profile.scss';
+
 export default ({ lud06 }) => {
   const [showQr, setShowQr] = useState(false);
 

@@ -54,7 +54,7 @@ const EditableItem = ({ targetValue, label, children }) => {
 
 const EditableLinks = ({ items, children }) => {
   const [profileEdit] = useRecoilState(profileEditState);
-  const [profileData, setProfileDataState] = useRecoilState(profileDataState);
+  const [, setProfileDataState] = useRecoilState(profileDataState);
 
   const setProfileLink = (value, index, subIndex) => {
     setProfileDataState((data) => {
@@ -89,7 +89,7 @@ const EditableLinks = ({ items, children }) => {
     });
   };
 
-  const handleLinkAdd = (idx) => {
+  const handleLinkAdd = () => {
     setProfileDataState((oldState) => {
       const newState = [...(oldState.links || []), ['', '']];
       return {

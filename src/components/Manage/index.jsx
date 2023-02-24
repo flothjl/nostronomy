@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Profile from '../Profile';
 import ItemBase from '../ItemBase';
 
-
 import './index.scss';
 
 export default () => {

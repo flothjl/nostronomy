@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import ItemBase from '../ItemBase';
 import { EditableItem } from './EditableItem';
 
-import './Profile.scss';
-
 export default ({ name, nip05Address, pubKey, isEdit }) => {
   const [verified, setVerified] = useState(false);
   const [domain, setDomain] = useState('');
