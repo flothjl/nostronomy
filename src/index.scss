@@ -22,6 +22,7 @@ div#root {
 }
 
 .profile {
+    background-color: white;
     box-shadow: 0 2.8px 2.2px rgba($shadow-color, 0.034),
         0 6.7px 5.3px rgba($shadow-color, 0.048),
         0 12.5px 10px rgba($shadow-color, 0.06),
@@ -31,19 +32,8 @@ div#root {
     border-radius: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    max-height: 85%;
-    overflow: scroll;
-
-
-    background:
-        linear-gradient(white 33%, rgba(244, 66, 229, 0)),
-        linear-gradient(rgba(244, 66, 229, 0), white 66%) 0 100%,
-        radial-gradient(farthest-side at 50% 0, rgba(34, 34, 34, 0.5), rgba(0, 0, 0, 0)),
-        radial-gradient(farthest-side at 50% 100%, rgba(34, 34, 34, 0.5), rgba(0, 0, 0, 0)) 0 100%;
-    background-color: white;
-    background-repeat: no-repeat;
-    background-attachment: local, local, scroll, scroll;
-    background-size: 100% 45px, 100% 45px, 100% 15px, 100% 15px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
 }
 
 span.emoji {
