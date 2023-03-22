@@ -1,5 +1,5 @@
 import ItemBase from './ItemBase';
-export default () => {
+const Loader = () => {
   return (
     <ItemBase>
       <div className='spinner-border' role='status'>
@@ -8,3 +8,5 @@ export default () => {
     </ItemBase>
   );
 };
+
+export default Loader;

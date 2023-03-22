@@ -1,4 +1,4 @@
-export default ({ children }) => {
+const Nostree = ({ children }) => {
   return (
     <>
       <div className='container'>
@@ -34,3 +34,5 @@ export default ({ children }) => {
     </>
   );
 };
+
+export default Nostree; 
