@@ -1,6 +1,6 @@
 import Emoji from './Emoji';
 import { validateLink } from '../../util';
-import { EditableLinks } from './EditableItem';
+import { EditableLinks } from './EditableProfileItem';
 
 const Link = ({ link }) => {
   if(link[0]){

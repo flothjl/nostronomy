@@ -1,7 +1,26 @@
+import {useState} from 'react'
+import ManageRelays from "./ManageRelays";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
 const Nostree = ({ children }) => {
+  const [showManageRelays, setShowManageRelays] = useState(false);
   return (
     <>
       <div className='container'>
+        <div className='header'>
+          <div className='row'>
+            <div className='col mx-2 my-2'>
+            <FontAwesomeIcon
+                      onClick={() => {
+                        setShowManageRelays(old => !old)
+                      }}
+                      icon={faGear}
+                      style={{ verticalAlign: 'middle', color: 'white' }}
+                      size='lg'
+                    />
+            </div>
+          </div>
+        </div>
         <div className={'row h-100 align-items-center mx-1'}>
           <div className={'profile col-12'}>
             <div className={'row'}>
@@ -31,6 +50,7 @@ const Nostree = ({ children }) => {
           </div>
         </div>
       </div>
+      <ManageRelays show={showManageRelays} toggle={setShowManageRelays}/>
     </>
   );
 };

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import QRCode from 'react-qr-code';
-import { EditableItem } from './EditableItem';
+import { EditableItem } from './EditableProfileItem';
 import ItemBase from '../ItemBase';
 import Emoji from './Emoji';
 
-export default ({ lud06 }) => {
+const Lnurl = ({ lud06 }) => {
   const [showQr, setShowQr] = useState(false);
 
   const handleClose = () => {
@@ -38,3 +38,5 @@ export default ({ lud06 }) => {
     </EditableItem>
   );
 };
+
+export default Lnurl;

@@ -17,7 +17,7 @@ let relayUrls;
 if (relays) {
   relayUrls = relays.split(',');
 } else {
-  relayUrls = ['wss://relay.damus.io', 'wss://relay.snort.social', 'relay.current.fyi'];
+  relayUrls = ['wss://relay.damus.io', 'wss://relay.snort.social'];
 }
 
 const relayUrlState = atom({

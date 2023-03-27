@@ -2,9 +2,9 @@ import { nip05 } from 'nostr-tools';
 import { useState, useEffect } from 'react';
 
 import ItemBase from '../ItemBase';
-import { EditableItem } from './EditableItem';
+import { EditableItem } from './EditableProfileItem';
 
-export default ({ name, nip05Address, pubKey, isEdit }) => {
+const Name = ({ name, nip05Address, pubKey, isEdit }) => {
   const [verified, setVerified] = useState(false);
   const [domain, setDomain] = useState('');
 
@@ -50,3 +50,5 @@ export default ({ name, nip05Address, pubKey, isEdit }) => {
     </>
   );
 };
+
+export default Name;

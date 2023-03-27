@@ -1,4 +1,4 @@
-import { EditableItem } from './EditableItem';
+import { EditableItem } from './EditableProfileItem';
 import ItemBase from '../ItemBase';
 
 export default ({ data }) => {

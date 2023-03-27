@@ -1,7 +1,5 @@
 import { useNostr, useProfile, dateToUnix } from 'nostr-react';
-import { nip19 } from 'nostr-tools';
 import { useEffect, useRef, useState } from 'react';
-// import { Navigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
 import { profileEditState, profileDataState } from '../../recoilState';
@@ -16,18 +14,7 @@ import Website from './Website';
 
 const Profile = ({ isManage, isEditable, pubKey: _pubKey = null }) => {
   let pubKey = _pubKey;
-  if (!pubKey) {
-    const queryParameters = new URLSearchParams(window.location.search);
-    const npub = queryParameters.get('npub');
-    try {
-      pubKey = nip19.decode(npub).data;
-    } catch {
-      console.error('unable to decode pubKey');
-    }
-  }
-  // if(!pubKey){
-  //   return <Navigate to="/manage"/>
-  // }
+
   const nostr = useNostr();
   const [profileEdit, setProfileEdit] = useRecoilState(profileEditState);
   const [profileData, setProfileData] = useRecoilState(profileDataState);

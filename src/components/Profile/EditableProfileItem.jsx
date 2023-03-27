@@ -5,6 +5,7 @@ import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import ItemBase from '../ItemBase';
 import { profileDataState, profileEditState } from '../../recoilState';
 
+// TODO: refactor to consume src/components/EditableItem
 const Base = ({ value, label, setProfileData }) => {
   return (
     <ItemBase style={{ marginTop: '10px' }}>
@@ -63,17 +64,6 @@ const EditableLinks = ({ items, children }) => {
       return {
         ...data,
         links: newVal,
-      };
-    });
-  };
-
-  const handleLinkUpdate = (arrayIdx, idx, link) => {
-    setProfileDataState((oldState) => {
-      const newState = [...oldState?.links];
-      newState[arrayIdx][idx] = link;
-      return {
-        ...oldState,
-        links: newState,
       };
     });
   };

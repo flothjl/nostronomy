@@ -10,12 +10,12 @@ import { relayUrlState } from './recoilState';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/profile/:npub',
     element: <Profile />,
     errorElement: <Error />,
   },
   {
-    path: '/manage',
+    path: '/',
     element: <Manage />,
     errorElement: <Error />,
   },

@@ -1,6 +1,6 @@
-import {EditableItem} from './EditableItem';
+import {EditableItem} from './EditableProfileItem';
 import ItemBase from '../ItemBase';
-export default ({ data }) => {
+const About = ({ data }) => {
   return (
     <EditableItem targetValue={'about'} label='About'>
       {data ? (
@@ -16,3 +16,5 @@ export default ({ data }) => {
     </EditableItem>
   );
 };
+
+export default About;

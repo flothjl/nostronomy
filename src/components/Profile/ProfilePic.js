@@ -1,5 +1,5 @@
 import ItemBase from '../ItemBase';
-import { EditableItem } from './EditableItem';
+import { EditableItem } from './EditableProfileItem';
 
 export default ({ picture }) => {
   return (

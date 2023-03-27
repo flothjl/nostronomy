@@ -63,6 +63,16 @@ span.emoji {
     text-align: center;
 }
 
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 3rem;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: right;
+}
+
 .item-base {
     font-size: 1rem;
 }
