@@ -6,9 +6,9 @@ The link-in-bio website built on [nostr](https://github.com/nostr-protocol)
 ## Demo Site
 This is still a Work in progress and buggy, but a site to test it out has been setup:
 <br/>
-Create/modify/update profile: https://nostree-87f2c.web.app/manage
+Create/modify/update profile: https://nostree-87f2c.web.app/
 <br/>
-View a profile: https://nostree-87f2c.web.app/?npub=SOME-NPUB
+View a profile: https://nostree-87f2c.web.app/profile/:npub
 <br/>
 
 Notes:
