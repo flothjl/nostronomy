@@ -34,9 +34,13 @@ const ManageRelays = ({ show, toggle }) => {
             label='Url'
             buttonLabel='Add'
           />
-          <ItemBase>
-            <button onClick={handleSubmit}>Update</button>
-          </ItemBase>
+        <div className='row justify-content-center mt-1'>
+            <div className='d-grid gap-2'>
+              <button className='btn btn-primary' onClick={handleSubmit}>
+                Save
+              </button>
+            </div>
+          </div>
         </Modal.Body>
       </Modal>
     </>

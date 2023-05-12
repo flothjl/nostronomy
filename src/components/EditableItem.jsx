@@ -99,4 +99,4 @@ const EditableItemList = ({ items, setter, label, buttonLabel }) => {
   );
 };
 
-export { EditableItemList, EditableItem };
+export { EditableItemList, EditableItem, Base };

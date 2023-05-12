@@ -8,7 +8,7 @@ const Link = ({ link }) => {
       <div className='row text-center'>
         <div className='col-12'>
           <Emoji emoji={'🔗'} />
-          <a href={link[0]} target='_blank'>
+          <a href={link[0]} rel="noreferrer" target='_blank'>
             {link[1] || link[0]}
           </a>
         </div>
@@ -18,7 +18,7 @@ const Link = ({ link }) => {
 
 };
 
-export default ({ links }) => {
+const Links = ({ links }) => {
   const linkElements = links?.map((link, idx) => {
     if (validateLink(link)) {
       return <Link key={idx} link={link} />;
@@ -28,3 +28,5 @@ export default ({ links }) => {
   });
   return <EditableLinks items={links}>{linkElements}</EditableLinks>;
 };
+
+export default Links;

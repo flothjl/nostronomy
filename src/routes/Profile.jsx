@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { nip19 } from 'nostr-tools';
 import Profile from '../components/Profile';
 
-const ProfileRoute = () => {
+const ProfilePage = () => {
   const { npub } = useParams();
   let pubKey;
   try {
@@ -13,4 +13,4 @@ const ProfileRoute = () => {
   return <Profile isManage={false} isEditable={false} pubKey={pubKey}/>
 }
 
-export default ProfileRoute;
+export default ProfilePage;

@@ -2,31 +2,8 @@ import { useRecoilState } from 'recoil';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 
-import ItemBase from '../ItemBase';
+import { Base } from '../EditableItem';
 import { profileDataState, profileEditState } from '../../recoilState';
-
-// TODO: refactor to consume src/components/EditableItem
-const Base = ({ value, label, setProfileData }) => {
-  return (
-    <ItemBase style={{ marginTop: '10px' }}>
-      <div className='input-group'>
-        <span className='input-group-text' id={label}>
-          {label}
-        </span>
-        <input
-          type='text'
-          className='form-control'
-          id={label}
-          aria-describedby={label}
-          onChange={(e) => {
-            setProfileData(e.target.value);
-          }}
-          value={value}
-        />
-      </div>
-    </ItemBase>
-  );
-};
 
 const EditableItem = ({ targetValue, label, children }) => {
   const [profileEdit] = useRecoilState(profileEditState);
@@ -39,11 +16,11 @@ const EditableItem = ({ targetValue, label, children }) => {
       };
     });
   };
+
   if (profileEdit) {
     return (
       <Base
-        setProfileData={(value) => setProfileData(targetValue, value)}
-        targetValue={targetValue}
+        setter={(value) => setProfileData(targetValue, value)}
         label={label}
         value={profileData?.[targetValue] || ''}
       />
@@ -98,7 +75,7 @@ const EditableLinks = ({ items, children }) => {
               <div key={idx} className='row'>
                 <div className='col'>
                   <Base
-                    setProfileData={(value) => setProfileLink(value, idx, 0)}
+                    setter={(value) => setProfileLink(value, idx, 0)}
                     key={`${idx}${0}`}
                     label={'URL'}
                     value={item[0]}
@@ -106,7 +83,7 @@ const EditableLinks = ({ items, children }) => {
                 </div>
                 <div className='col'>
                   <Base
-                    setProfileData={(value) => setProfileLink(value, idx, 1)}
+                    setter={(value) => setProfileLink(value, idx, 1)}
                     key={`${idx}${1}`}
                     label={'Name'}
                     value={item[1]}

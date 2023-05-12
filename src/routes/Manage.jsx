@@ -1,5 +1,7 @@
 import Manage from "../components/Manage"
 
-export default () => {
+const ManagePage = () => {
   return <Manage />
 }
+
+export default ManagePage;

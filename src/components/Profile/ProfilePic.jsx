@@ -1,7 +1,7 @@
 import ItemBase from '../ItemBase';
 import { EditableItem } from './EditableProfileItem';
 
-export default ({ picture }) => {
+const ProfilePic = ({ picture }) => {
   return (
     <EditableItem targetValue={'picture'} label='Picture'>
       <ItemBase>
@@ -10,3 +10,5 @@ export default ({ picture }) => {
     </EditableItem>
   );
 };
+
+export default ProfilePic;
